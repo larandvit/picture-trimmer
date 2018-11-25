@@ -23,7 +23,7 @@ Exit codes: 0 - successful completion, 1 - completion with any error
 ```
 
 ## Contributing
-Please read [CONTRIBUTING.md](https://github.com/larandvit/ebcdic-parser/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/larandvit/picture-trimmer/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
  
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/larandvit/picture-trimmer/blob/master/LICENSE) file for details
