@@ -5,8 +5,15 @@ The tool can be used to reduce image size for publishing images to Web. It's use
 
 ## Features
 
-* Set up a desired size of output images
-* Process images different types
+1. Set up a desired size of output images
+2. Process images different types
+* jpg
+* bmp
+* png
+* gif
+3. Support 2 user interfaces
+* Command line (CLI)
+* Graphic (GUI) - still in development
 
 ## Usage
 ```
