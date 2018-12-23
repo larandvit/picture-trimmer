@@ -31,13 +31,13 @@ optional arguments:
   --desiredsize         "desired size" Output image size
 
 Exit codes: 
-Success = 0
-Source folder not exist = 1
-No picture files found = 2
-Desired size out of bound = 3
-Source folder empty = 4
-Ready folder empty = 5
-Unexpected = 255
+0 - Success
+1 - Source folder not exist
+2 - No picture files found
+3 - Desired size out of bound
+4 - Source folder empty
+5 - Ready folder empty
+255 - Unexpected
 ```
 
 2. Graphical interface
