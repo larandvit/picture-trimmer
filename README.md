@@ -12,10 +12,14 @@ The tool can be used to reduce image size for publishing images to Web. It's use
 * png
 * gif
 3. Support 2 user interfaces
-* Command line (CLI)
-* Graphic (GUI) - still in development
+* Command line user interface (CLI)
+* Graphical user interface (GUI)
 
 ## Usage
+1. Command line interface
+
+Wnen run it, provide with the mandatory parameters
+
 ```
 usage: image_transfrom.py [-h] --sourcefolder "source folder" --desiredsize "desired size"
 
@@ -26,7 +30,24 @@ optional arguments:
   --sourcefolder        "source folder" Input folder with pictures
   --desiredsize         "desired size" Output image size
 
-Exit codes: 0 - successful completion, 1 - completion with any error
+Exit codes: 
+Success = 0
+Source folder not exist = 1
+No picture files found = 2
+Desired size out of bound = 3
+Source folder empty = 4
+Ready folder empty = 5
+Unexpected = 255
+```
+
+2. Graphical interface
+
+Run it without any parameters
+
+## Installation
+It requests to set up PIL library. If the library is installed in Windows, make sure to run command line prompt as administrator.
+```bash
+pip install pillow
 ```
 
 ## Contributing
