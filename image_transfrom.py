@@ -1,3 +1,17 @@
+"""
+    Description: The tool can be used to reduce image size for publishing them to Web. 
+                 It's useful to create galleries of pictures when there are square 
+                 pictures of smaller sizes.
+"""
+
+__author__ = "Vitaly Saversky"
+__date__ = "2018-11-24"
+__credits__ = ["Vitaly Saversky"]
+__version__ = "1.0.0"
+__maintainer__ = "Vitaly Saversky"
+__email__ = "larandvit@hotmail.com"
+__status__ = "Production"
+
 import os
 from os import path
 import sys
