@@ -4,13 +4,14 @@
 The tool can be used to reduce image size for publishing images to Web. It's useful to create galleries of pictures when there are square pictures of smaller sizes.
 
 ## Features
-
 1. Set up a desired size of output images
+
 2. Process images different types
 * jpg
 * bmp
 * png
 * gif
+
 3. Support 2 user interfaces
 * Command line user interface (CLI)
 * Graphical user interface (GUI)
