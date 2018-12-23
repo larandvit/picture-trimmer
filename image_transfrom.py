@@ -45,6 +45,15 @@ class ReturnCode(IntEnum):
     ReadyFolderEmpty = 5
     Unexpected = 255
 
+RETURNCODES = {"Success" : ReturnCode.Success.value,
+               "Source folder not exist" :ReturnCode.SourceFolderNotExist.value,
+               "No picture files found" : ReturnCode.NoPictureFiles.value,
+               "Desired size out of bound"  : ReturnCode.DesiredSizeOutOfBound.value,
+               "Source folder empty"  : ReturnCode.SourceFolderEmpty.value,
+               "Ready folder empty" : ReturnCode.ReadyFolderEmpty.value,
+               "Unexpected" : ReturnCode.Unexpected.value
+    }
+
 class Processing:
     def __init__(self, sourceFolder, readyFolder, desiredSize):
         self.sourceFolder = sourceFolder
@@ -127,15 +136,20 @@ class Processing:
 
 class CliProcessing:
     def __init__(self):
+
+        exitCodesText = ''
+        for text, code in zip(RETURNCODES,RETURNCODES.values()):
+            exitCodesText += "\n" + str(code) + " - " + text
+        
         appArgs = argparse.ArgumentParser(description='Reduce size of pictures for publishing them to web', 
-                                          epilog="Exit codes: 0 - successful completion, 1 - completion with any error",
+                                          epilog=exitCodesText,
                                           formatter_class=RawTextHelpFormatter)
         
         appArgs.add_argument("--sourcefolder", nargs=1, required=True, help="Input folder with pictures", metavar='"source folder"')
         appArgs.add_argument("--desiredsize", nargs=1, required=True, help="Output image size", metavar='"desired size"')
-        
+
         args = appArgs.parse_args()
-        
+
         self.sourceFolder = args.sourcefolder[0]
         self.desiredSize = int(args.desiredsize[0])
         
@@ -345,7 +359,11 @@ if __name__=="__main__":
             # if any parameters, command line mode
             processing = CliProcessing()
             returnCode = processing.run()
-        
+    
+    #ignore exception when call with help parameeter -h or --help 
+    except ArgumentError:
+        pass
+     
     except:
         print('Unexpected error in main: {}'.format(traceback.format_exc()))
     
