@@ -7,11 +7,7 @@
 __author__ = "Vitaly Saversky"
 __date__ = "2018-11-24"
 __credits__ = ["Vitaly Saversky"]
-<<<<<<< HEAD
 __version__ = "2.0.0"
-=======
-__version__ = "1.0.0"
->>>>>>> 191df664c8fa6f440f662da9b506fbe890dc39a0
 __maintainer__ = "Vitaly Saversky"
 __email__ = "larandvit@hotmail.com"
 __status__ = "Production"
