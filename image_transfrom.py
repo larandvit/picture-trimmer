@@ -7,7 +7,7 @@
 __author__ = "Vitaly Saversky"
 __date__ = "2018-11-24"
 __credits__ = ["Vitaly Saversky"]
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 __maintainer__ = "Vitaly Saversky"
 __email__ = "larandvit@hotmail.com"
 __status__ = "Production"
@@ -54,6 +54,19 @@ RETURNCODES = {"Success" : ReturnCode.Success.value,
                "Unexpected" : ReturnCode.Unexpected.value
     }
 
+def getAppfolder():
+    
+    appFolder = None
+    
+    if getattr(sys, 'frozen', False):
+        # run in pyinstaller bundle
+        appFolder = sys._MEIPASS
+    else:
+        # run in a normal Python environment
+        appFolder = path.dirname(__file__)
+        
+    return appFolder
+        
 class Processing:
     def __init__(self, sourceFolder, readyFolder, desiredSize):
         self.sourceFolder = sourceFolder
@@ -196,7 +209,7 @@ class GuiProcessing(ttk.Frame):
         
         super().__init__(master)
         master.title('Picture Trimmer v.{}'.format(__version__))
-        # master.iconbitmap(path.join(appFolder(),"images","app.ico"))
+        master.iconbitmap(path.join(getAppfolder(),'images', 'app.ico'))
         master.minsize(width=500, height=170)
         
         self.grid(sticky=tk.N+tk.S+tk.E+tk.W)
@@ -360,12 +373,12 @@ if __name__=="__main__":
             processing = CliProcessing()
             returnCode = processing.run()
     
-    #ignore exception when call with help parameeter -h or --help 
+    #ignore exception when call with help parameter -h or --help 
     except ArgumentError:
         pass
      
     except:
         print('Unexpected error in main: {}'.format(traceback.format_exc()))
     
-    finally:    
+    finally: 
         sys.exit(returnCode)
