@@ -20,6 +20,7 @@ from argparse import RawTextHelpFormatter
 import traceback
 
 from PIL import Image
+from PIL import ImageTk
 
 from enum import IntEnum
 
@@ -209,7 +210,7 @@ class GuiProcessing(ttk.Frame):
         
         super().__init__(master)
         master.title('Picture Trimmer v.{}'.format(__version__))
-        master.iconbitmap(path.join(getAppfolder(),'images', 'app.ico'))
+            
         master.minsize(width=500, height=170)
         
         self.grid(sticky=tk.N+tk.S+tk.E+tk.W)
@@ -228,6 +229,17 @@ class GuiProcessing(ttk.Frame):
         self.desiredSizeValue.set(640)
         
         self.processValue.set('Ready')
+        
+        # set icon is very tricky, so in case of any issue, it can be skipped
+        try:
+            if sys.platform.startswith('win'):
+                master.iconbitmap(path.join(getAppfolder(),'images', 'app.ico'))
+            else:
+                fileName = path.join(getAppfolder(), 'images', 'app.ico')
+                img = ImageTk.PhotoImage(Image.open(fileName))
+                master.tk.call('wm', 'iconphoto', master._w, img)
+        except Exception as err:
+            print(str(err))
         
         self.errorMessage = ''
         self.errorCode = ReturnCode.Success
