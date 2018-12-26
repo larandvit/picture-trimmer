@@ -46,10 +46,46 @@ Exit codes:
 Run it without any parameters
 
 ## Installation
-It requests to set up PIL library. If the library is installed in Windows, make sure to run command line prompt as administrator.
+It requests to set up PIL library. 
+
+### Windows
+Run command line prompt as administrator.
 ```bash
 pip install pillow
 ```
+### Unix
+```bash
+sudo pip install pillow
+```
+
+## Optional Installation
+If you have decided to bundle it in executable application. You need to install [PyInstall](http://www.pyinstaller.org/).
+
+### Windows
+Run command line prompt as administrator.
+```bash
+pip install pyinstaller
+```
+### Unix
+```bash
+sudo pip install pyinstaller
+```
+
+## Build Executable Bundle
+Run a batch file below depending on your operation system. If it has been completed successfully, you can find an executable file in **dist** folder.
+
+### Windows
+```bat
+build_app_windows.bat
+```
+A ready bundle can be found in [Releases](https://github.com/larandvit/picture-trimmer/releases) folder. It's tested in Windows 10/7 editions.
+
+### Unix
+```bash
+./build_app_unix.sh
+```
+
+A ready bundle can be found in [Releases](https://github.com/larandvit/picture-trimmer/releases) folder. It's tested in CentOS 7.
 
 ## Contributing
 Please read [CONTRIBUTING.md](https://github.com/larandvit/picture-trimmer/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
@@ -59,3 +95,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## Acknowledgments
 * Core transformation logic is taken from https://jdhao.github.io/2017/11/06/resize-image-to-square-with-padding/.
+* Executable bundle software developed by [PyInstall](http://www.pyinstaller.org/).
