@@ -64,10 +64,12 @@ If you have decided to bundle it in executable application. You need to install 
 ### Windows
 Run command line prompt as administrator.
 ```bash
+
 pip install pyinstaller
 ```
 ### Unix
 ```bash
+sudo yum install python36-devel
 sudo pip install pyinstaller
 ```
 
