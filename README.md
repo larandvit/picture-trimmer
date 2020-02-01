@@ -1,4 +1,4 @@
-# Reduce Size of Pictures for Publishing Them to Web 
+# Resize Pictures for Publishing Them to Web 
 
 ## Description
 The tool can be used to reduce size of pictures for publishing them to Web. One of the usages can be to create galleries of pictures when there are square pictures of smaller size.
